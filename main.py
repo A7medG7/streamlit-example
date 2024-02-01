@@ -1,4 +1,4 @@
-# main.py
+
 
 import streamlit as st
 from streamlit_option_menu import option_menu
@@ -17,7 +17,7 @@ class MultiApp:
         })
 
     def run(self):
-        st.set_page_config(page_title="Main Menu")
+        st.set_page_config(page_title="Used Car App")
 
         # Sidebar navigation using option_menu
         app = st.sidebar.radio('Main Menu', ['Home', 'Communication'])
