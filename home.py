@@ -1,3 +1,4 @@
+
 import pandas as pd
 import streamlit as st
 import joblib
@@ -32,11 +33,21 @@ def run_home():
     Body_inputs = st.selectbox('Body ', Body)
     Color_inputs = st.selectbox('Color ', Color)
     Fuel_inputs = st.selectbox('Fuel ', Fuel)
-    Kilometers_inputs = st.selectbox('Kilometers ', Kilometers)
+
+    Kilometers_inputs = st.slider('Select Kilometers',min_value=100,max_value=200000,value=1000)
+    width_percentage = max(10, len(str(Kilometers_inputs))) * 10
+    # Display the selected year with dynamically adjusted font size
+    st.write("You selected :", f"<span style=\"font-size: {width_percentage}%;\">{Kilometers_inputs}</span>", 
+         unsafe_allow_html=True)
     Engine_inputs = st.selectbox('Engine ', Engine)
     Transmission_inputs = st.selectbox('Transmission ', Transmission)
     Gov_inputs = st.selectbox('Gov ', Gov)
-    Year_inputs = st.selectbox('Year ', Year)
+    Year_inputs = st.slider("Select a year", min_value=1970, max_value=2023, value=2000)
+    
+
+# Display the selected year with dynamically adjusted font size
+    st.write("You selected :", f"<span style=\"font-size: {width_percentage}%;\">{Year_inputs}</span>", 
+         unsafe_allow_html=True)
 
     # Collect user input
     user_input = {
